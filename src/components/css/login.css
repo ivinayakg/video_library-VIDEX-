@@ -24,6 +24,7 @@
 
 .input input {
   width: 100%;
+  background-color: transparent;
   border: none;
 }
 
