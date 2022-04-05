@@ -6,7 +6,7 @@
   align-items: center;
 
   padding: 1.2rem 2rem;
-  background-color: white;
+  background-color: rgb(var(--body-color-dark));
 }
 
 .login_form,
