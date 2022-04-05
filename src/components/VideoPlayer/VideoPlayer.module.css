@@ -1,0 +1,126 @@
+.videoPlayer {
+  width: 60vw;
+  height: 100%;
+  display: grid;
+  grid-template-areas: "overflow";
+  z-index: 1;
+  overflow-y: hidden;
+  flex-grow: 2;
+}
+
+.videoPlayer:hover .controller {
+  transform: translate3d(0, 0, 0);
+}
+
+.videoPlayer:hover .progress_filled i {
+  display: block;
+}
+
+.video {
+  width: 100%;
+  object-fit: contain;
+  grid-area: overflow;
+}
+
+.controller {
+  width: 100%;
+  grid-area: overflow;
+  align-self: flex-end;
+  z-index: 10;
+  transition: ease 100ms;
+  transform: translate3d(0, 90%, 0);
+  background-color: rgba(0, 0, 0, 0.98);
+}
+
+.progress {
+  width: 100%;
+  height: 13px;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.progress_filled {
+  height: 100%;
+  background-color: rgb(var(--primary));
+  transition: ease 500ms;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+}
+
+.progress_filled i {
+  margin-right: -10px;
+  font-size: 1.2rem;
+  color: white;
+  display: none;
+  position: absolute;
+  z-index: 20;
+}
+
+.controller_options {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 10px;
+  padding: 0.1rem 1rem;
+}
+
+.controller_options button,
+.playback i {
+  background-color: transparent;
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+}
+
+.playback {
+  margin-left: auto;
+  position: relative;
+}
+
+.playback_dropdown {
+  display: none;
+  opacity: 0;
+}
+
+.playback_dropdownActive {
+  position: absolute;
+  background-color: black;
+  color: white;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: -1300%;
+}
+
+@media (max-width: 770px) {
+  .videoPlayer {
+    width: 100%;
+    padding: 0px 5px;
+  }
+  .controller,
+  .controller > *,
+  .progress_filled,
+  .playback {
+    overflow: visible;
+  }
+
+  .volume {
+    width: 30%;
+  }
+
+  .playback_dropdownActive {
+    height: fit-content;
+    overflow-y: scroll;
+    flex-direction: row;
+    top: -275%;
+    left: -675%;
+  }
+
+  .playback_dropdownActive button {
+    overflow: hidden;
+    min-height: fit-content;
+  }
+}
