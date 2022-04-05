@@ -25,6 +25,7 @@
 .input input {
   width: 100%;
   border: none;
+  background-color: transparent;
 }
 
 .login_form button,
