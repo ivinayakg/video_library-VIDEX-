@@ -1,0 +1,80 @@
+.login_comp,
+.signup_comp,
+.login_form,
+.signup_form {
+  justify-content: center;
+  align-items: center;
+
+  padding: 1.2rem 2rem;
+  background-color: white;
+}
+
+.login_form,
+.signup_form {
+  gap: 6px;
+  align-items: flex-start;
+  padding: 0.6rem;
+  width: 18rem;
+}
+
+.login_form .input,
+.signup_form .input {
+  width: 100%;
+}
+
+.input input {
+  width: 100%;
+  border: none;
+}
+
+.login_form button,
+.signup_form button {
+  width: 100%;
+  margin-top: 6px;
+}
+
+.login_form a,
+.signup_form a {
+  align-self: center;
+}
+
+.login_form .productListing_radioButton,
+.signup_form .productListing_radioButton {
+  width: 100%;
+}
+
+.login_form label.checkbox,
+.signup_form label.checkbox {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.login_comp .btn,
+.signup_comp .btn {
+  color: white;
+}
+
+.loginModel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+}
+
+.loginModel_inner {
+  margin-top: 5rem;
+  max-width: fit-content;
+  height: max-content;
+}
+
+.loginModel_inner .section {
+  width: fit-content;
+}
