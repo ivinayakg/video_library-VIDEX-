@@ -43,6 +43,14 @@ const GlobalReducer = (state, action) => {
         ...state,
         history: HistoryReducer(state.history, { type, payload }),
       };
+    case "WATCHLATER":
+      return {
+        ...state,
+        watchLater: WatchLaterReducer(state.watchLater, {
+          type,
+          payload,
+        }),
+      };
     case "RESET":
       localStorage.clear();
       return {
