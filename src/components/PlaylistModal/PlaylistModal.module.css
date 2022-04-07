@@ -1,0 +1,72 @@
+.background {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 500;
+}
+
+.main {
+  background-color: rgb(var(--body-color-dark));
+  border-radius: 5px;
+  padding: 1.2rem;
+}
+
+.checkBox {
+  background-color: transparent;
+  color: rgb(var(--text-color));
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 500;
+}
+
+.checkBox h3 {
+  font-weight: inherit;
+  text-transform: capitalize;
+}
+
+.checkBox i {
+  border: 1px solid rgb(var(--text-color));
+  padding: 4px;
+  color: transparent;
+}
+
+.checkBox i.active {
+  color: rgb(var(--body-color-dark));
+  background-color: rgb(var(--text-color));
+}
+
+.playlistCreator {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 12px;
+  margin: 4px;
+  border-bottom: 1px solid rgb(var(--text-color));
+  background-color: rgba(var(--text-color), 0.1);
+}
+
+.playlistCreator input {
+  flex-grow: 2;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+}
+
+.playlistCreator input::placeholder {
+  height: 100%;
+  color: rgba(var(--title-color), 0.75);
+}
+
+.playlistCreator button {
+  padding: 0;
+  background-color: transparent;
+  color: rgb(var(--text-color));
+}
