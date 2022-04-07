@@ -47,19 +47,18 @@ const Main = () => {
         <i className="fas fa-moon"></i>
       </button>
     ),
-    !state.user.isAuth ? (
+    !state.user.isAuth && (
       <button className="btn" onClick={() => setShow(true)}>
         Login
       </button>
-    ) : (
-      <ProfileModal />
     ),
   ];
-  console.log(state);
 
   return (
     <>
       {backButton}
+
+      {/* loginModal */}
       <LoginModal action={{ show, setShow }} />
 
       <NotificationParent timeout={2500} />
