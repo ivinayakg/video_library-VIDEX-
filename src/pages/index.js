@@ -52,7 +52,7 @@ const Main = () => {
         Login
       </button>
     ) : (
-      <ProfileModal />
+      <ProfileModal /> //modal is rendered here
     ),
   ];
 
