@@ -1,0 +1,72 @@
+button.profile {
+  background-color: transparent;
+  border: none;
+  color: rgb(var(--text-color));
+  padding: 0;
+  font-size: 1.6rem;
+}
+
+button.profile:hover {
+  background-color: transparent;
+}
+
+.main {
+  position: absolute;
+  right: 1rem;
+  z-index: 5;
+  display: none;
+  background-color: rgb(var(--body-color-dark));
+  padding: 1.2rem;
+  border-radius: 5px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
+}
+
+.main_unactive {
+  display: flex;
+  animation: mainAnimationClose 200ms forwards;
+}
+
+.main_active {
+  display: flex;
+  animation: mainAnimation 500ms forwards;
+}
+
+.main .btn {
+  width: 100%;
+  background-color: transparent;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  color: rgb(var(--text-color));
+  font-size: 1rem;
+}
+
+.main .btn h3 {
+  color: rgb(var(--text-color));
+  font-weight: 500;
+}
+
+@keyframes mainAnimationClose {
+  0% {
+    top: calc(0.5rem + var(--header-height));
+  }
+  100% {
+    top: 125vh;
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes mainAnimation {
+  0% {
+    top: 125vh;
+  }
+  100% {
+    top: calc(0.5rem + var(--header-height));
+  }
+}
