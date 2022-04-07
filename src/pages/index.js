@@ -52,9 +52,10 @@ const Main = () => {
         Login
       </button>
     ) : (
-      <ProfileModal /> //modal is rendered here
+      <ProfileModal />
     ),
   ];
+  console.log(state);
 
   return (
     <>

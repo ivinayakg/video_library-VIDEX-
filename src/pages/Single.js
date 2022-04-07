@@ -6,7 +6,7 @@ import { SingleVideoComponent, VideoCard } from "../components";
 const SingleVideo = () => {
   const { state } = useLocation();
   const { videoId } = useParams();
-  const [data, setData] = useState(state ?? null);
+  const [data, setData] = useState(state);
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
@@ -25,7 +25,7 @@ const SingleVideo = () => {
   return (
     <div className="section singleVideo">
       <div className="container">
-        {data && <SingleVideoComponent data={data} />}
+        <SingleVideoComponent data={data} />
         <div className="videoContainer--recommend">
           {videos.map((entry) => {
             return <VideoCard data={entry} key={entry._id} />;

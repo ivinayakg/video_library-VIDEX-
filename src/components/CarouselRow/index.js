@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useWindowEvents } from "../../utils";
 import classes from "./CarouselRow.module.css";
 

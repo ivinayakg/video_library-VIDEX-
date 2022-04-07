@@ -177,7 +177,6 @@ const SignUp = ({ setAction }) => {
 };
 
 const LoginModal = ({ action }) => {
-  //action is taken from the index.js file present in the pages folder
   const { show, setShow } = action;
   const currentChild = useRef();
   const clickHandler = (e) => {
@@ -190,7 +189,6 @@ const LoginModal = ({ action }) => {
     if (!pointoncontainer) setShow(false);
   };
 
-  // this function checks wether the click is made on the component or the background
   const PointerOnContainer = (client, event) => {
     if (client.left > event.clientX || client.right < event.clientX) {
       return false;

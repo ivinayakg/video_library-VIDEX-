@@ -1,5 +1,13 @@
 import { useReducer, useEffect, useContext, createContext } from "react";
-import { checkToken } from "../reducers/UserReducer";
+import { HistoryReducer } from "../reducers/HistoryReducer";
+import { LikeReducer } from "../reducers/LikeReducer";
+import {
+  GetInitialPlaylists,
+  PlaylistReducer,
+} from "../reducers/PlaylistReducer";
+import { checkToken, UserReducer } from "../reducers/UserReducer";
+import { WatchLaterReducer } from "../reducers/WatchLaterReducer";
+
 const GlobalContext = createContext();
 
 export const GlobalContextProvider = ({ children }) => {
@@ -24,6 +32,7 @@ export const GlobalContextProvider = ({ children }) => {
         console.error(error);
       }
     })();
+    GetInitialPlaylists(dispatch);
   }, []);
 
   return (
@@ -36,22 +45,17 @@ export const GlobalContextProvider = ({ children }) => {
 const GlobalReducer = (state, action) => {
   const { type, payload } = action;
   switch (action.for) {
-    case "USER":
-      return { ...state, user: UserReducer(state.user, { type, payload }) };
     case "LIKE":
       return {
         ...state,
         likedVideos: LikeReducer(state.likedVideos, { type, payload }),
       };
+    case "USER":
+      return { ...state, user: UserReducer(state.user, { type, payload }) };
     case "HISTORY":
       return {
         ...state,
         history: HistoryReducer(state.history, { type, payload }),
-      };
-    case "PLAYLIST":
-      return {
-        ...state,
-        playlist: PlaylistReducer(state.playlist, { type, payload }),
       };
     case "WATCHLATER":
       return {
@@ -60,6 +64,11 @@ const GlobalReducer = (state, action) => {
           type,
           payload,
         }),
+      };
+    case "PLAYLIST":
+      return {
+        ...state,
+        playlist: PlaylistReducer(state.playlist, { type, payload }),
       };
     case "RESET":
       localStorage.clear();
