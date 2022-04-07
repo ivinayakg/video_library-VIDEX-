@@ -43,6 +43,11 @@ const GlobalReducer = (state, action) => {
         ...state,
         history: HistoryReducer(state.history, { type, payload }),
       };
+    case "PLAYLIST":
+      return {
+        ...state,
+        playlist: PlaylistReducer(state.playlist, { type, payload }),
+      };
     case "RESET":
       localStorage.clear();
       return {
