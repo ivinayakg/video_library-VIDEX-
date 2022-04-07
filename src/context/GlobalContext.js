@@ -38,6 +38,11 @@ const GlobalReducer = (state, action) => {
   switch (action.for) {
     case "USER":
       return { ...state, user: UserReducer(state.user, { type, payload }) };
+    case "LIKE":
+      return {
+        ...state,
+        likedVideos: LikeReducer(state.likedVideos, { type, payload }),
+      };
     case "HISTORY":
       return {
         ...state,
@@ -47,6 +52,14 @@ const GlobalReducer = (state, action) => {
       return {
         ...state,
         playlist: PlaylistReducer(state.playlist, { type, payload }),
+      };
+    case "WATCHLATER":
+      return {
+        ...state,
+        watchLater: WatchLaterReducer(state.watchLater, {
+          type,
+          payload,
+        }),
       };
     case "RESET":
       localStorage.clear();
